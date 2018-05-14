@@ -1,0 +1,55 @@
+window.hjSiteSettings = window.hjSiteSettings || {"testers_widgets":[],"surveys":[],"record_targeting_rules":[],"recording_capture_keystrokes":true,"polls":[{"persist_condition":"once","targeting":[{"negate":false,"pattern":"https:\/\/www.visualcv.com\/examples","match_operation":"simple","component":"url"},{"negate":false,"pattern":"phone","match_operation":"exact","component":"device"},{"negate":false,"pattern":"tablet","match_operation":"exact","component":"device"},{"negate":false,"pattern":"desktop","match_operation":"exact","component":"device"}],"language":"en","created_epoch_time":1479421439,"targeting_percentage":100,"display_condition":"delay","content":{"thankyou":"Thank you for answering this Poll. Your feedback is highly appreciated!","questions":[{"nextByAnswer":[],"text":"Quick question: How can we improve this page? Is anything missing?","labels":null,"answers":null,"next":"byOrder","type":"single-open-ended-multiple-line","randomize_answer_order":false},{"nextByAnswer":[],"text":"Would you like a response to your question or comment?","labels":null,"answers":[{"text":"Yes (please enter your email address)","comments":true},{"text":"No thanks","comments":false}],"next":"byOrder","type":"single-close-ended","randomize_answer_order":false}]},"effective_show_branding":true,"background":"#4094E4","skin":"dark","position":"right","display_delay":3,"id":99635}],"site_id":99258,"forms":[],"record":false,"heatmaps":[{"created_epoch_time":1485469718,"targeting":[{"negate":false,"pattern":"https:\/\/www.visualcv.com\/cv-templates\/","match_operation":"simple","component":"url"}],"id":1098906,"selector_version":2},{"created_epoch_time":1485469418,"targeting":[{"negate":false,"pattern":"https:\/\/www.visualcv.com\/examples\/civil-engineer\/","match_operation":"simple","component":"url"}],"id":1098886,"selector_version":2},{"created_epoch_time":1485469388,"targeting":[{"negate":false,"pattern":"https:\/\/www.visualcv.com\/examples\/software-engineer\/","match_operation":"simple","component":"url"}],"id":1098884,"selector_version":2},{"created_epoch_time":1485469374,"targeting":[{"negate":false,"pattern":"https:\/\/www.visualcv.com\/examples\/teacher\/","match_operation":"simple","component":"url"}],"id":1098883,"selector_version":2},{"created_epoch_time":1485469362,"targeting":[{"negate":false,"pattern":"https:\/\/www.visualcv.com\/examples\/","match_operation":"simple","component":"url"}],"id":1098880,"selector_version":2},{"created_epoch_time":1485469341,"targeting":[{"negate":false,"pattern":"https:\/\/www.visualcv.com\/resume-samples\/project-manager-cv-examples","match_operation":"simple","component":"url"}],"id":1098878,"selector_version":2},{"created_epoch_time":1485469319,"targeting":[{"negate":false,"pattern":"https:\/\/www.visualcv.com\/resume-samples\/software-engineer-cv-examples","match_operation":"simple","component":"url"}],"id":1098877,"selector_version":2},{"created_epoch_time":1485469279,"targeting":[{"negate":false,"pattern":"https:\/\/www.visualcv.com\/resume-samples\/directory","match_operation":"simple","component":"url"}],"id":1098872,"selector_version":2},{"created_epoch_time":1450204683,"targeting":[{"negate":false,"pattern":"https:\/\/www.visualcv.com\/www\/student-cv\/","match_operation":"simple","component":"url"}],"id":285346,"selector_version":0},{"created_epoch_time":1447707155,"targeting":[{"negate":false,"pattern":"https:\/\/www.visualcv.com\/www\/resources","match_operation":"simple","component":"url"}],"id":244621,"selector_version":0}],"deferred_page_contents":[],"feedback_widgets":[],"r":0.2349180222,"state_change_listen_mode":"automatic_with_fragments"};
+
+window.hjBootstrap = window.hjBootstrap || function (scriptUrl) {
+    var b = function () {}, d = document, h = d.head || d.getElementsByTagName('head')[0], s, v, c, ct;
+
+    if (!d.addEventListener) {
+        return;
+    }
+
+    s = d.createElement('script');
+    s.async = 1;
+    s.src = scriptUrl;
+    h.appendChild(s);
+
+    ct = [
+        'iframe#_hjRemoteVarsFrame {',
+        'display: none !important; width: 1px !important; height: 1px !important; ' +
+        'opacity: 0 !important; pointer-events: none !important;',
+        '}'
+    ];
+    c = document.createElement('style');
+    c.type = 'text/css';
+    if (c.styleSheet) {
+        c.styleSheet.cssText = ct.join('');
+    } else {
+        c.appendChild(d.createTextNode(ct.join('')));
+    }
+    h.appendChild(c);
+
+    v = d.createElement('iframe');
+    v.style.cssText = ct[1];
+    v.name = '_hjRemoteVarsFrame';
+    v.title = 'Hotjar Remote Vars Frame';
+    v.id = '_hjRemoteVarsFrame';
+    v.src = 'https://' + (window._hjSettings.varsHost || 'vars.hotjar.com') + '/rcj-b2c1bce0a548059f409c021a46ea2224.html';
+    v.onload = function () {
+        b.varsLoaded = true;
+        if ((typeof hj != 'undefined') && hj.event) {
+            hj.event.signal('varsLoaded');
+        }
+    };
+    b.varsJar = v;
+
+    if (d.body) {
+        d.body.appendChild(v);
+    } else {
+        d.addEventListener('DOMContentLoaded', function () {
+            d.body.appendChild(v);
+        });
+    }
+    window.hjBootstrap = b;
+};
+
+
+hjBootstrap('https://script.hotjar.com/modules-4a696cc7c4002194647c3d56a32a489e.js');
